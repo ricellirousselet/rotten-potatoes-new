@@ -42,18 +42,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: web-rotten
 spec:
   selector:
     matchLabels:      
-      app: web
+      app: web-rotten
   template:
     metadata:
       labels:
-        app: web
+        app: web-rotten
     spec:
       containers:
-        - name: web
+        - name: web-rottten-potatoes
           image: ricellirousselet/rotten-potatoes:v2
           ports:
           - containerPort: 5000
@@ -73,10 +73,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: web
+  name: web-rotten
 spec:
   selector:
-    app: web
+    app: web-rotten
   ports:
     - port: 80
       targetPort: 5000
